@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+<title>Etch a sketch</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <div class="container">
+     <div class="content">
+        <div class="title"><h1>Sketch Pad</h1></div>
+        <div class="board"></div>
+        <div class="buttons">
+            <button id="black" onclick="changecolour('black')">Black</button>
+            <button id="white" onclick="changecolour('white')">White</button>
+            <button id="rst" onclick="reset()">Reset</button>
+        </div>
+        <div class="size">
+            <input type="number" value="16" onchange="changeSize(this.value)"/>
+            <button> Choose size</button>
+        </div>
+    </div>     
+</div>
+</body>
+<script>
+let colour="black";
+function createpad(size){
+    let board = document.querySelector(".board");
+    let squares = board.querySelectorAll("div");
+    squares.forEach((div) => div.remove());
+
+    board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    board.style.gridTemplateColumns =`repeat(${size}, 1fr)`;
+    
+let amount = size * size;
+    for(let i =0; i < amount; i++){
+        let square = document.createElement("div");
+        square.addEventListener("mouseover",sqcolour);
+        square.style.backgroundColor = "white";
+        board.insertAdjacentElement("beforeend", square);
+    }
+}
+createpad(16);
+function sqcolour(){
+    this.style.backgroundColor =colour;
+}
+function changecolour(choice){
+ colour = choice;
+}
+function reset(){
+    let board = document.querySelector(".board");
+    let squares = board.querySelectorAll("div");
+    squares.forEach((div) => div.style.backgroundColor ='white');
+}
+function changeSize(input){
+    if(input > 2 && input <= 100){
+        createpad(input) 
+    }else{
+        alert("to many squares");
+    }
+}
+</script>

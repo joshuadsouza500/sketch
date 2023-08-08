@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #f1e970;
+}
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lobster', cursive;
+    font-size: 2em;
+    padding: 2px;
+    color: white;
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.content{
+    padding: 1% 5% 0% 5%;
+    background-color: red;
+    border-radius: 5%;
+}
+.board{
+    display: grid;
+    width: 400px;
+    height: 400px;    
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    padding: 5% 0% 5% 0%;
+}
+input{
+  background-color: beige;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 12%;
+  
+}
+button{
+    padding: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#black{
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+#white{
+    color: black;
+    background-color:white;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+#rst{
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+.size{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+
+}
